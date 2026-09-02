@@ -1,0 +1,349 @@
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.my-header{
+    animation: slideTop 1s ease forwards;
+    animation-delay: .1s;
+}
+/* .sticky-top {
+    position: sticky;
+    top: 0;
+} */
+.bg-image {
+    background-image: url("../img/sub2.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.my-slider {
+    background-image: url("../img/slider3.png");
+    
+    
+}
+
+.slider-books {
+    overflow: visible;
+    border-radius: 5px 5px 0px 0px;
+}
+.slider-books img {
+    transition: .2s ease;
+   
+}
+.slider-books:hover img {
+    
+    transform: scale(.9);
+}
+
+
+.slider-info h1 {
+  font-size: 40px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.3s;
+}
+.buy-button{
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.3s;
+}
+.slider-info h6 {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+.slider-info h6:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.slider-info h6:nth-child(2) {
+  animation-delay: .7s;
+}
+.slider-info h6:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.featured-book {
+
+  opacity: 0;
+  animation: slideBottom 1.4s ease forwards;
+}
+.about-dev-img {
+
+  opacity: 0;
+  animation: slideLeft 3s ease forwards;
+}
+.about-dev {
+
+  opacity: 0;
+  animation: slideRight 3s ease forwards;
+}
+
+.about-img img {
+
+  opacity: 0;
+  animation: slideLeft 1.4s ease forwards;
+}
+.about-info {
+
+  opacity: 0;
+  animation: slideRight 1.4s ease forwards;
+}
+
+.get-in-touch {
+
+  opacity: 0;
+  animation: slideLeft 1.4s ease forwards;
+}
+.contact-info {
+
+  opacity: 0;
+  animation: slideRight 1.4s ease forwards;
+}
+.register-info {
+
+  opacity: 0;
+  animation: slideRight 1.4s ease forwards;
+}
+.register-form {
+
+  opacity: 0;
+  animation: slideLeft 1.4s ease forwards;
+}
+.login-section {
+
+  opacity: 0;
+  animation: slideLeft 1.4s ease forwards;
+}
+.login-img img{
+    opacity: 0;
+    animation: slideRight 1.4s ease forwards;
+    
+}
+.crousel-books{
+  opacity: 0;
+  animation: slideRight 1.4s ease forwards;
+}
+
+.my-card div {
+    overflow: hidden;
+    border-radius: 5px 5px 0px 0px;
+}
+.my-card div img {
+    transition: 1.5s ease-in-out;
+}
+.my-card:hover img {
+    transform: scale(1.2);
+}
+.my-map div {
+    overflow: visible;
+    border-radius: 5px 5px 0px 0px;
+}
+.my-map div img {
+    transition: .5s ease;
+}
+.my-map:hover img {
+    transform: scale(1.2);
+}
+/* .my-card1 div {
+    overflow: hidden;
+    border-radius: 5px 5px 0px 0px;
+}
+.my-card1 div img {
+    transition: .3s ease;
+}
+.my-card1:hover img {
+    transform: scale(1.1);
+}
+.my-card1 div {
+    overflow: visible;
+    border-radius: 5px 5px 0px 0px;
+} */
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+}
+.scale-hover {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.scale-hover:hover {
+    transform: scale(1.2);
+}
+
+.my-client:hover {
+    border: 1px solid lightgrey;
+}
+/* .my-client div img {
+    transition: .5s ease;
+}
+.my-client img:hover {
+
+    transform: scale(1.2);
+} */
+.my-client div img {
+    transition: .5s ease;
+}
+.my-client img:hover {
+
+    transform: scale(1.2);
+}
+.my-footer a span {
+    transition: transform 0.3s ease;
+    display: inline-block;
+
+}
+.my-footer a span:hover {
+    transform: translateX(20px);
+}
+.my-team {
+    height: 250px;
+    background-color: white;
+    border-radius: 5px;
+    transition: .5s ease;
+}
+.my-team:hover {
+    transform: translateY(-15px);
+}
+
+.footer-headings {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+.footer-headings::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+.footer-headings:hover::after {
+    transform: scaleX(1);
+}
+.head-icons i:hover {
+    color: #27ae60;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 8px;
+}
+.my-card1 {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.card-img-container {
+  position: relative;
+  z-index: 1;
+}
+.animated-img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+.icon-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  z-index: 2;
+}
+.my-card1:hover .animated-img {
+  transform: translateY(25px);
+}
+.my-card1:hover .icon-container {
+  transform: translateX(-50%) translateY(25px); 
+  opacity: 1;
+}
+.icon-container i:hover{
+  color:#27ae60
+}
+
+
+.video-row {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-row video {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#scroll-slider::-webkit-scrollbar{
+    display: none;
+} 
+
+
+

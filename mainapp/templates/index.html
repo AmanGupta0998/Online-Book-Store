@@ -1,0 +1,439 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+<div class="wrapper">
+    <!-- carousel start -->
+    <div class="row my-slider ">
+        <div class="col-sm-10 mx-auto mt-1">
+            <div class="row my-5">
+                <div class="col-sm-6 mt-4 py-1 slider-info">
+                    <h1 class="mt-5" style="color: #27ae60;"><b>Upto 75% Off</b></h1>
+                    <div class="slider-info">
+                        <h6 class="text-secondary">There is a good news for all of you, </h6>
+                        <h6 class="text-secondary"> If you buy any book from our website then</h6>
+                        <h6 class="text-secondary">You will get 75% discount and also you will get free delivery.</h6>
+                    </div>
+                    <button type="submit" class="btn btn-success fa-lg my-3 ms-2 buy-button"
+                        style="width:150px; height:40px">Buy Now</button>
+                    <br>
+                    <span class="text1 text-success"></span>
+                </div>
+                <div class="col-sm-6" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="row crousel-books">
+                        <div class=" d-flex gap-2 " id="scroll-slider" style="overflow-x :scroll;">
+
+                            {% for b in books %}
+                            {% if b.cover_image %}
+                            <div class="col-sm-4 slider-books">
+                                <a href="{% url 'book_details' id=b.id %}"> <img class="shadow-lg"
+                                        src="{{b.cover_image.url}}" alt="" height="250px"></a>
+                            </div>
+                            {% else %}
+                            <div class="col-sm-4 slider-books">
+                                <img src="" alt="Cover Image" class="card-img-top p-3 shadow card-img-top animated-img"
+                                    height="250px">
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- carousel end -->
+    <!-- features start -->
+    <div class="row my-4">
+        <div class="col-sm-10 mx-auto">
+            <div class="row my-5">
+                <div class="col-sm-3">
+                    <div class="row " style="display: flex; justify-content: center; align-items: center ;">
+                        <div class="col-sm-4 text-end  pe-0">
+                            <i class="fa-regular fa-truck fa-2xl fa-beat" style="color: #27ae60;"></i>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>Free Shipping</h4>
+                            <span>Order Over $100</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="row" style="display: flex; justify-content:center; align-items:center">
+                        <div class="col-sm-4 text-end pe-0">
+                            <i class="fa-solid fa-lock fa-2xl fa-shake" style="color: #27ae60;"></i>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>Secure Payment</h4>
+                            <span>100 secure payment</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="row" style="display: flex; justify-content : center; align-items:center;">
+                        <div class="col-sm-4 text-end pe-0">
+                            <i class="fa-solid fa-rotate-right fa-2xl fa-spin" style="color: #27ae60;"></i>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>Easy Returns</h4>
+                            <span>10 days returns</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="row " style="display:flex; justify-content:center;align-items:center;">
+                        <div class="col-sm-4 text-end pe-0">
+                            <i class="fa-solid fa-headset fa-2xl fa-bounce" style="color: #27ae60;"></i>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>24/7 Support</h4>
+                            <span>call us anytime</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- features end -->
+    <!-- video start -->
+    <div class="row">
+        <div class="video-row my-5">
+            <video autoplay muted loop playsinline>
+                <source src="{% static 'img/v3.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <!-- video end -->
+    <!-- Featured book start -->
+    <div class="row">
+        <div class="col-sm-10 mx-auto">
+            <div class="row mt-3">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-4 px-2 ms-2 scale-hover" style="outline:1px solid grey;">Featured Book</p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt-4" data-aos="zoom-out-up" data-aos-duration="1500">
+                <div class="col-sm-12">
+                    <section class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for b in books %}
+                                <li class="splide__slide p-3">
+                                    <div class="card my-card1">
+                                        <div class="icon-container">
+                                            <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                                            <a class="text-dark" href="{% url 'book_details' id=b.id %}"><i
+                                                    class="fa-solid fa-eye fa-xl"></i></a>
+
+                                        </div>
+                                        <div class="card-img-container pt-3 ">
+                                            {% if b.cover_image %}
+                                            <img src="{{b.cover_image.url}}"
+                                                class="card-img-top p-3 shadow card-img-top animated-img" alt="..."
+                                                height="400px">
+                                            {% else %}
+                                            <img src="" alt="Cover Image"
+                                                class="card-img-top p-3 shadow card-img-top animated-img"
+                                                height="400px">
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title mb-4">{{b.title}}</h5>
+                                            <span class="fa-xl"><i
+                                                    class="fa-solid fa-indian-rupee-sign"></i>{{b.price}}</span><span
+                                                class="text-secondary"><del><i
+                                                        class="fa-solid fa-indian-rupee-sign"></i>{{b.original_price}}</del></span><br>
+                                            <form action="{% url 'addtocart' id=b.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-success mt-2">Add To Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Featured book end -->
+    <!-- subscribe for latest update start -->
+    <div class="row mt-5 bg-image text-white p-5" style="height: 300px;">
+        <div class="col-sm-10 mx-auto">
+            <div class="row mt-5">
+                <div class="col-sm-7"></div>
+                <div class="col-sm-5 ps-5">
+                    <h2>Subscribe For Latest Updates</h2>
+                    <form class="text-center" role="search">
+                        <input class="form-control mt-3" type="search" placeholder="enter your email"
+                            aria-label="email" /><br>
+                        <button class="btn btn-success" type="submit">Subscribe</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe for latest update end -->
+    <!-- New arrivals start -->
+    <div class="row mt-5 ">
+        <div class="col-sm-10 mx-auto">
+            <div class="row ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-4 ms-2 px-3 scale-hover" style="outline:1px solid grey">New Arrivals</p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt-4" data-aos="zoom-out-down" data-aos-duration="1500">
+                <div class="col-sm-12">
+                    <section class="splide" id="splide1">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for b in new_arrivals %}
+                                <li class="splide__slide p-3">
+                                    <div class="card my-card1">
+                                        <div class="icon-container">
+                                            <a class="text-dark" href="#"><i class="fa-solid fa-heart fa-xl"></i></a>
+                                            <a class="text-dark" href="{% url 'book_details' id=b.id %}"><i
+                                                    class="fa-solid fa-eye fa-xl"></i></a>
+
+                                                    
+                                        </div>
+                                        <div class="card-img-container pt-3 ">
+                                            {% if b.cover_image %}
+                                            <img src="{{b.cover_image.url}}"
+                                                class="card-img-top p-3 shadow card-img-top animated-img" alt="..."
+                                                height="400px">
+                                            {% else %}
+                                            <img src="" alt="Cover Image"
+                                                class="card-img-top p-3 shadow card-img-top animated-img"
+                                                height="400px">
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title mb-2">{{b.title}}</h5>
+                                            <div class="p-2">
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                    style="color: #27ae60;"></i>
+                                            </div>
+                                            <span class="fa-xl"><i
+                                                    class="fa-solid fa-indian-rupee-sign"></i>{{b.price}}</span><span
+                                                class="text-secondary"><del><i
+                                                        class="fa-solid fa-indian-rupee-sign"></i>{{b.original_price}}</del></span><br>
+                                            <form action="{% url 'addtocart' id=b.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-success mt-2">Add To Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New arrivals end  -->
+    <!-- Deal of The Day start -->
+    <div class="row mt-5" style="height: 500px; background-color:#f2f2f2;">
+        <div class="col-sm-11 mx-auto">
+            <div class="row mt-5">
+                <div class="col-sm-6 mt-5">
+                    <h3 class="mt-5 ms-5" style="color: #27ae60;"><b>Deal Of The Day</b></h3>
+                    <h1 class="ms-5 mt-3"><b>Upto 50% Off</b></h1>
+                    <p class="ms-5 text-secondary">Good news for you, if you buy any book on Saturday and Sunday you
+                        will get 50% off and also you will get free delivery.</p>
+                    <button class="btn btn-success ms-5 fa-lg" style="width: 130px;height:40px;">Shop Now</button>
+
+                </div>
+                <div class="col-sm-6">
+                    <img src="{% static 'img/deal.jpg' %}" alt="" class="img-fluid" height="80%">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Deal of The Day end -->
+    <!-- client's reviews start -->
+    <div class="row my-5">
+        <div class="col-sm-10 mx-auto">
+            <div class="row my-4">
+                <div class="col-sm-4">
+                    <hr>
+                </div>
+                <div class="col-sm-3">
+                    <p class="fs-4 px-5 ms-3 scale-hover" style="outline:1px solid grey;">Client's Reviews</p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+            <div class="row " data-aos="zoom-out-up" data-aos-duration="1500">
+                <div class="col-sm-12">
+                    <section class="splide" id="splide2">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide p-3" style="height: 310px;">
+                                    <div class="card p-3 my-client shadow text-center border-light">
+                                        <div><img class="rounded-circle img-fluid" src="{% static 'img/client1.jpg' %}"
+                                                alt="" height="80px" width="80px"></div>
+                                        <h4 class="mt-2">Yuvraj</h4>
+                                        <p class="text-secondary">"Online Book Hub offers a seamless experience
+                                            intuitive design, rich
+                                            recommendations, and fast delivery. Found my next favorite book
+                                            effortlessly. Truly a gem
+                                            for
+                                            every reader.”</p>
+                                        <div class="ms-4 mt-2">
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                style="color: #27ae60;"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide p-3" style="height: 310px;">
+                                    <div class="card text-center  p-3 my-client rounded shadow border-light">
+                                        <div> <img class="rounded-circle img-fluid" src="{% static 'img/client2.jpg' %}"
+                                                alt="" height="80px" width="80px"></div>
+                                        <h4 class="mt-2">Shreya</h4>
+                                        <p class="text-secondary">“I absolutely love Online Book Hub! The layout is
+                                            super clean,
+                                            browsing is
+                                            a breeze,smooth useer interface, and the recommendations actually match my
+                                            taste. My new
+                                            go-to bookstore online.”</p>
+                                        <div class="ms-4 mt-2">
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                style="color: #27ae60;"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide p-3" style="height: 310px;">
+                                    <div class="card text-center  p-3 my-client rounded shadow border-light">
+                                        <div> <img class="rounded-circle img-fluid" src="{% static 'img/client3.jpg' %}"
+                                                alt="" height="80px" width="80px"></div>
+                                        <h4 class="mt-2">Monk</h4>
+                                        <p class="text-secondary">“Online Book Hub feels sleek, fast, and friendly. I
+                                            found what I
+                                            needed
+                                            instantly. Also too much Love the smooth animations and clutter-free design
+                                            super refreshing
+                                            experience!”</p>
+                                        <div class="ms-4 mt-2">
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                            <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                style="color: #27ae60;"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- client's reviews end -->
+    <!-- Our Blogs start -->
+    <div class="row my-5">
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-4 px-4 ms-2 scale-hover" style="outline:1px solid grey;">Our Blogs</p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt-4" data-aos="zoom-out-up" data-aos-duration="1500">
+                <div class="col-sm-4">
+                    <div class="card my-card h-100">
+                        <div>
+                            <img src="{% static 'img/o1.jpg' %}" class="card-img-top" alt="..." height="290px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">🧠 Book Discovery</h5>
+                            <p class="card-text ">Discover literary treasures at Online Book Hub curated reads, genre
+                                favorites, and staff picks tailored to spark your imagination and guide you to your next
+                                great read.
+                            </p>
+                            <a href="#" style="width: 130px;height:40px;" class="btn btn-success mt-4">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card my-card h-100">
+                        <div>
+                            <img src="{% static 'img/o2.jpg' %}" class="card-img-top" alt="..." height="290px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">🔥 Book Trends</h5>
+                            <p class="card-text">Dive into our “Book Trends” blog at Online Book Hub where we spotlight
+                                what readers are loving, what’s flying off our shelves, and the fresh genres reshaping
+                                your digital bookstore experience.</p>
+                            <a href="#" style="width: 130px;height:40px;" class="btn btn-success mt-4">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card my-card h-100">
+                        <div>
+                            <img src="{% static 'img/blog3.jpg' %}" class="card-img-top" alt="..." height="290px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">💡Behind-the-Scene</h5>
+                            <p class="card-text">Step into the engine room of Online Book Hub with our “Behind the
+                                Scene” blog, where design meets code and creativity meets strategy to craft the seamless
+                                bookstore experience you explore daily.</p>
+                            <a href="#" style="width: 130px;height:40px;" class="btn btn-success mt-4">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Blogs end -->
+</div>
+{% endblock %}

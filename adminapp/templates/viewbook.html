@@ -1,0 +1,59 @@
+{% extends 'adminbase.html' %}
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-success my-greetings" style="background-color: #27ae5f60;">View Books :</h3>
+        <!-- <hr class="border-2"> -->
+        <table class="table mt-4" style="background-color: #27ae5f60;">
+            <tr class="border border-success" style="background-color: #27ae5f60;">
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Tag price</th>
+                <th>Selling Price</th>
+                <th>Published Date</th>
+                <th>Langauge</th>
+                <th>Cover Image</th>
+                <th>Stock</th>
+                <th>Uploaded Time</th>
+                <th>Updated Time</th>
+                <th>Action</th>
+            </tr>
+            {% for e in book %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{e.title}}</td>
+                <td>{{e.author}}</td>
+                <td>{{e.category.name}}</td>
+                <td>{{e.description}}</td>
+                <td>{{e.original_price}}</td>
+                <td>{{e.price}}</td>
+                <td>{{e.published_date}}</td>
+                <td>{{e.language}}</td>
+                <td>
+                    {% if e.cover_image %}
+                    <img src="{{e.cover_image.url}}" alt="cover" height="80">
+                    {% else %}
+                    NO Cover Image
+                    {% endif %}
+                </td>
+                <td>{{e.stock}}</td>
+                <td>{{e.created_at}}</td>
+                <td>{{e.updated_at}}</td>
+                <td>
+                    <a href="{% url 'delbook' id=e.id %}" class="btn btn-danger"><i class="ti ti-trash"></i></a>
+                    <a href="{% url 'editbook' id=e.id %}" class="btn btn-success mt-2" style="background-color:#27ae60"><i class="ti ti-edit"></i></a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

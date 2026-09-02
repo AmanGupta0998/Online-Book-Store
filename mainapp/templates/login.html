@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+{% block main %}
+<!-- login start -->
+<div class="row my-5">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-6 border border-2 rounded shadow login-section">
+                <h3 class="mt-4 mb-5 text-center "><b>SIGN IN</b></h3>
+                 {% if messages %}
+                     {% for m in messages %}
+                         <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{m}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div>
+                     {% endfor %}
+                    {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <i class="fa-solid fa-user fa-xl mt-3 ms-5" style="color: #27ae60;"></i>
+                    <span>Usertype</span>
+                    <input class="form-control mt-2 ms-5" name="username" type="text"
+                        placeholder=" Enter your full name" aria-label="name" style="width: 530px;" />
+
+                    <i class="fa-solid fa-key fa-xl mt-5 mb-2 ms-5" style="color: #27ae60;"></i>
+                    <span>Password</span>
+                    <input class="form-control mt-1 ms-5" name="password" type="password"
+                        placeholder="Enter your password" aria-label="password" style="width: 530px;" />
+                    <div class="form-check mt-3 ms-4">
+                        <input class="form-check-input ms-1" type="checkbox" value="" id="checkDefault" required>
+                        <label class="form-check-label ms-1" for="checkDefault">
+                            Remember Me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3 mb-2 ms-5 fa-lg"
+                        style="width:180px; height:45px">Sign
+                        In</button><br>
+                    <div class="ms-5 mt-4">
+                        <span>Forget Password ? <a style="color: #27ae60;" href="#">Click Here</a></span>
+                        <span class="px-4">Don't Have An Account ? <a style="color: #27ae60;" href="{% url 'register' %}">Click
+                                Here</a></span>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="login-img">
+                    <img class="ms-5" src="{% static 'img/registrationlogo2.jpg' %}" alt="" height="500px" width="500px">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- login end -->
+{% endblock %}
+

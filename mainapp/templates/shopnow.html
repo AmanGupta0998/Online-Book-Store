@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row rounded shadow-lg mt-4 featured-book" style="height: 75vh;">
+            <div class="col-sm-4">
+                <img class="rounded mt-4 ms-3" src="{% static 'img/c1.png' %}" alt="" height="500px">
+            </div>
+            <div class="col-sm-8 mt-4 ">
+                <div class="p-2">
+                    <h4 class="mb-3">The Era of Robotics</h4>
+                    <span><b>Author:</b> Er. Akash Maurya</span><br>
+                    <span><b>Category:</b> Sci-Fi</span><br>
+                    <span><b>Language:</b> English,Hindi</span><br>
+                    <span><b>ISBN:</b> 978-3-16-1485</span><br>
+                    <span><b>Published:</b> May 3, 2025</span><br>
+                    <span><b>Description:</b></span><br>
+                    <span>This books tells how humans are now going to be depend on Robots.</span>
+                </div>
+
+                <span class="ms-2 fa-lg"><b>Book Price :</b> &#8377</span><span class="ms-1 fa-lg" id="pp">499.00</span><br>
+                <span class="ms-2">Quantity</span>
+                <select class="mt-2 rounded" id="qty" onchange="price()">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select><span class="ms-4"><b class="me-2">Total Book Price :</b>&#8377</span><span class="ms-1" id="tp">499</span><span>.00</span><br>
+
+
+                <button type="submit" class="btn btn-success mt-3 shadow ms-2 me-2">Add To Cart</button>
+                <button type="submit" class="btn btn-success mt-3 shadow ms-2 me-2">Buy Now</button>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

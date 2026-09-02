@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+{% block main %}
+<!-- about our book store start -->
+        <div class="row">
+            <div class="col-sm-10 mx-auto">
+                <div class="row my-4 ">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-4 text-secondary">
+                        <p class="fs-2 px-4 ms-2 scale-hover" style="outline:1px solid grey;"> <b>About Our Bookstore</b>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mt-5 pe-2 about-img">
+                       
+                        <img class="rounded" src="{% static 'img/book.avif' %}" alt="" height="400px">
+
+                    </div>
+                    <div class="col-sm-6 text-secondary my-2 about-info">
+                        <h3><b>Our Story</b></h3>
+                        <hr>
+                        <span>Founded in 2010, our online bookstore began as a small passion project between friends who
+                            shared a love for literature. What started as a modest collection of curated titles has
+                            grown into one of the most beloved destinations for book lovers worldwide.</span>
+                        <h3 class="mt-5"><b>Our Mission</b></h3>
+                        <hr>
+                        <span>We believe in the transformative power of books. Our mission is to connect readers with
+                            stories that inspire, educate, and entertain, while supporting authors and publishers who
+                            create these wonderful works.</span>
+                        <h3 class="mt-5"><b>Why Choose Us?</b></h3>
+                        <hr>
+                        <p><i class="fa-solid fa-circle-check me-2 fa-lg fa-beat-fade" style="color: #27ae60;"></i>Carefully curated
+                            selection of over 100,000 titles</p>
+                        <p><i class="fa-solid fa-circle-check me-2 fa-lg fa-beat-fade" style="color: #27ae60;"></i>Competitive prices
+                            and regular promotions</p>
+                        <p><i class="fa-solid fa-circle-check me-2 fa-lg fa-beat-fade" style="color: #27ae60;"></i>Fast and reliable
+                            worldwide shipping</p>
+                        <p><i class="fa-solid fa-circle-check me-2 fa-lg fa-beat-fade" style="color: #27ae60;"></i>Expert
+                            recommendations from our book-loving staff</p>
+                        <p><i class="fa-solid fa-circle-check me-2 fa-lg fa-beat-fade" style="color: #27ae60;"></i>Eco-friendly
+                            packaging options</p>
+                       <a href="{% url 'contact' %}"> <button class="btn btn-success fs-5" style="height: 50px; width:150px;">Get In Touch</button></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- about our book store end -->
+        <!-- meet our team start -->
+        <div class="row">
+            <div class="col-sm-10 mx-auto">
+                <div class="row mt-5">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4 text-secondary">
+                        <p class="fs-2 px-4 ms-5 scale-hover " style="outline:1px solid grey;"> <b>Meet Our Team</b>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+                <div class="row text-center mt-4" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                    <div class="col-sm-6 my-team rounded" style="background-color: #f9f9f9;">
+                        <div class=" m-2 shadow">
+                            <img class="rounded-circle border border-circle border-5 border-white  mx-auto d-block my-3" src="{% static 'img/m1.jpeg' %}" alt=""
+                                height="120px" width="120px">
+                            <h4>Shubham Verma</h4>
+                            <span style="color: #27ae60;">Founder & CEO</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 my-team rounded">
+                        <div class=" m-2 shadow" style="background-color: #f9f9f9;">
+                            <img class="rounded-circle border border-circle border-5 border-white mx-auto d-block my-3" src="{% static 'img/m2.jpeg' %}" alt=""
+                                height="120px" width="120px">
+                            <h4>Rituraj Singh</h4>
+                            <span style="color: #27ae60;">Head of Acquisitions</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 my-team rounded">
+                        <div class=" shadow mt-2" style="background-color: #f9f9f9;">
+                            <img class="rounded-circle border border-circle border-5 border-white mx-auto d-block my-3" src="{% static 'img/m3.jpeg' %}" alt=""
+                                height="120px" width="120px">
+                            <h4>Prasoon Kumar</h4>
+                            <span style="color: #27ae60;">Head of Acquisitions</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 my-team rounded">
+                        <div class=" shadow mt-2" style="background-color: #f9f9f9;">
+                            <img class="rounded-circle border border-circle border-5 border-white mx-auto d-block my-3" src="{% static 'img/m4.jpeg' %}" alt=""
+                                height="120px" width="120px">
+                            <h4>Nausheen Parwez</h4>
+                            <span style="color: #27ae60;">Customer Experience</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 my-team rounded">
+                        <div class=" shadow mt-2" style="background-color: #f9f9f9;">
+                            <img class="rounded-circle border border-circle border-5 border-white mx-auto d-block my-3" src="{% static 'img/m5.jpeg' %}" alt=""
+                                height="120px" width="120px">
+                            <h4>Priyansu Kr. Pandey</h4>
+                            <span  style="color: #27ae60;">Customer Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- meet our team end -->
+           {% endblock %}

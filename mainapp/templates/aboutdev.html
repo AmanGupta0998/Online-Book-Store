@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+{% block main %}
+<div class="row">
+    <div class="col-sm-10 mx-auto mt-4 shadow-lg featured-book" style="height: 75vh;">
+        <div class="row">
+            <div class="col-sm-5 about-dev-img mt-3">
+                <img src="{% static 'img/my-logo1.png' %}" alt="">
+            </div>
+            <div class="col-sm-7 about-dev">
+                <h3 class="my-3 text-secondary">About me : </h3>
+            <p>Hi, I’m Aman Gupta, a passionate software developer who thrives at the intersection of functionality
+                and design. I bring ideas to life using JavaScript, HTML, CSS, Python with Django, and MySQL, weaving
+                technical precision with clean, user-friendly interfaces.
+            </p>
+            <p>I’m currently building the Online Book Store—a platform designed to make discovering and buying books
+                delightfully seamless. Every page, animation, and interaction has been thoughtfully designed to reflect
+                not just utility, but an experience worth returning to. From dynamic search bars to intuitive admin
+                dashboards, I’ve architected it to deliver both style and substance.
+            </p>
+            <p>I believe in writing code that speaks—whether it’s through polished UI components or smart backend
+                logic. My work is rooted in continuous learning, creative problem-solving, and a relentless drive to
+                improve.</p><hr>
+            <p><i class="fa-brands fa-line fa-xl"></i> “Don’t just wake early, rise and shine.”<br>
+                This quote isn’t just on my desk—it’s my daily mantra. I wake up with purpose, and I build with
+                intention.
+            </p><hr>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

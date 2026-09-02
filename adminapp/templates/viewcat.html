@@ -1,0 +1,31 @@
+{% extends 'adminbase.html' %}
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-success my-greetings" style="background-color: #27ae5f60;">View Category :</h3>
+         <table class="table mt-5" style="background-color: #27ae5f60;">
+            <tr class=" border border-success rounded" style="background-color: #27ae5f60;">
+                <th>S.No</th>
+                <th>Category Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            {% for e in category %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.description}}</td>
+                <td>
+                    <a href="{% url 'delcat' id=e.id %}" class="btn btn-danger"><i class="ti ti-trash"></i></a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

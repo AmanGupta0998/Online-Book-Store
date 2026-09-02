@@ -1,0 +1,71 @@
+{% extends 'adminbase.html' %}
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-success my-greetings" style="background-color: #27ae5f60; border-radius:8px;">Add Books :</h3>
+    </div>
+    <div class="col-sm-9 mx-auto mt-4">
+        <div class="card p-3 shadow border border-success" style="background-color: #27ae5f60;" >
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="t" class="form-label">Book Title</label>
+                    <input type="text" name="title" id="t" class="form-control" placeholder="Book Title"required>
+                </div>
+                <div class="mb-3">
+                    <label for="auth" class="form-label">Author</label>
+                    <input type="text" name="author" id="auth" class="form-control" placeholder="Book Title"required>
+                </div>
+                  <div class="mb-3">
+                    <label for="cat" class="form-label">Select Category</label>
+                    <select name="category" id="cat" class="form-control" required>
+                        <option value="" selected disabled>--Select Cartegory--</option>
+                        {% for c in cats %}
+                        <option value="{{c.id}}">{{c.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                  <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <input type="text" name="description" id="desc" class="form-control" placeholder="Description"required>
+                </div>
+                <div class="mb-3">
+                    <label for="tp" class="form-label">Tag Price</label>
+                    <input type="number" name="original_price" step="0.01" id="tp" class="form-control" placeholder="Tag Price"required>
+                </div>
+                <div class="mb-3">
+                    <label for="sp" class="form-label">Selling Price</label>
+                    <input type="number" name="price" step="0.01" id="sp" class="form-control" placeholder="Selling Price"required>
+                </div>
+                <div class="mb-3">
+                    <label for="pd" class="form-label">Published Date</label>
+                    <input type="date" name="published_date" id="pd" class="form-control" placeholder="Published Date"required>
+                </div>
+                <div class="mb-3">
+                    <label for="lang" class="form-label">Language</label>
+                    <input type="text" name="language" id="lang" class="form-control" placeholder="Language"required>
+                </div>
+                <div class="mb-3">
+                    <label for="ci" class="form-label">Cover Image</label>
+                    <input type="file" name="cover_image" id="ci" class="form-control" placeholder="Cover Image"required>
+                </div>
+                <div class="mb-3">
+                    <label for="st" class="form-label">Stock</label>
+                    <input type="number" name="stock" id="st" class="form-control" placeholder="Stock"required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success" style="background-color: #27ae60;">Add Book</button>
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

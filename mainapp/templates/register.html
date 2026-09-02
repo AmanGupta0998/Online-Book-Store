@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<!-- create account start -->
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-4">
+            <div class="col-sm-5">
+                <hr>
+            </div>
+            <div class="col-sm-2">
+                <p class=" fs-4 px-1 ms-2 scale-hover" style="outline:1px solid grey;">Create Account</p>
+            </div>
+            <div class="col-sm-5">
+                <hr>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-6 border border-2 shadow rounded  register-form">
+                    <div class="row">
+                        <h4 class="p-2"><b>Register Now</b></h4>
+                         {% if messages %}
+                     {% for m in messages %}
+                         <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{m}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div>
+                     {% endfor %}
+                    {% endif %}
+
+                        <form method="post" class="row">
+                            {% csrf_token %}
+                            <i class="fa-solid fa-user fa-xl my-2" style="color: #27ae60;"></i>
+
+                            <input class="form-control mt-2 ms-2" name="name" type="text" placeholder="name"
+                                aria-label="Name" />
+                            <i class="fa-solid fa-envelope fa-xl mt-4 mb-3" style="color: #27ae60;"></i>
+
+                            <input class="form-control ms-2 " name="email" type="email" placeholder="email"
+                                aria-label="email" />
+
+
+                            <i class="fa-solid fa-phone fa-xl mb-3 mt-4" style="color: #27ae60;"></i>
+
+                            <input class="form-control ms-2" name="contactno" type="number" placeholder="phone"
+                                aria-label="phone" />
+
+                            <i class="fa-solid fa-key fa-xl mt-4 mb-3" style="color: #27ae60;"></i>
+
+                            <input class="form-control ms-2 mt-1" name="password" type="password" placeholder="Password"
+                                aria-label="password" />
+                            <input class="form-control ms-2 ms-1 mt-2" name="cpassword" type="password"
+                                placeholder="Confirm Password" aria-label="password" />
+
+                            <button type="submit" class="btn btn-success mt-2 ms-2 fa-lg"
+                                style="width:160px; height:40px">Register
+                                Now</button>
+                        </form>
+                        <span class="my-2">Already have an account? <a class="text-success" href="{% url 'login' %}"><span
+                                    >Login
+                                    Now</span></a></span>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 register-info">
+                    <h4><b>Why Register?</b></h4>
+                    <div class="row mt-5">
+                        <span class="fa-lg ms-1"><i class="fa-solid fa-tag me-2 fa-xl fa-fade"
+                                style="color: #27ae60;"></i><b>Exclusive Discounts</b></span>
+                        <p class="ms-5 text-secondary mt-2">Get members-only deals and promotions</p>
+                    </div>
+                    <div class="row mt-4">
+                        <span class="fa-lg ms-1"><i class="fa-solid fa-truck-fast me-2 fa-xl fa-fade"
+                                style="color: #27ae60;"></i><b>Faster Checkout</b></span>
+                        <p class="ms-5 text-secondary mt-2">Save your details for quick purchases</p>
+                    </div>
+                    <div class="row mt-4">
+                        <span class="fa-lg ms-1"><i class="fa-solid fa-heart me-2 fa-xl fa-fade"
+                                style="color: #27ae60;"></i><b>Wishlist</b></span>
+                        <p class="ms-5 text-secondary mt-2">Save books you love for later</p>
+                    </div>
+                    <div class="row mt-4">
+                        <span class="fa-lg ms-1"><i
+                                class="fa-solid fa-clock-rotate-left fa-spin fa-spin-reverse fa-xl me-2"
+                                style="color: #27ae60;"></i><b>Order History</b></span>
+                        <p class="ms-5 text-secondary mt-2">Track all your past purchases</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- create account end -->
+
+
+{% endblock %}

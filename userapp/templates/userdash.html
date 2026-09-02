@@ -1,0 +1,50 @@
+{% extends 'userbase.html' %}
+{% block user %}
+<div class="row">
+    <div id="greeting" class="alert alert-primary mt-3 text-dark my-greetings" role="alert"
+        style="font-size: 1.2rem; background-color:#27ae5f60; border: 2px solid #27ae60;">
+    </div>
+    <div class="col-sm-12">
+        <!-- <h3 class="p-3 border border-1 border-rounded border-success my-greetings" style="background-color: #27ae5f60;border-radius:8px;"></h3> -->
+
+    </div>
+    <div class="row">
+        <div class="col-sm-4 ms-5 mx-auto">
+            <div class="card text-center p-4 rounded-3 shadow"
+                style="background-color:#27ae5f60; border: 1px solid green;">
+               <div class="row">
+                <div class="col-sm-6">
+                     <i class="fa-solid fa-box fa-3x me-4 text-secondary"></i>
+                
+                </div>
+                <div class="col-sm-6">
+                    <h3>Orders</h3>
+                <h4>3</h4>
+                </div>
+               </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card  p-4 rounded-3 shadow"
+                style="background-color:#27ae5f60; border: 1px solid green;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa-solid fa-heart fa-3x me-4 text-secondary"></i>
+               
+                    </div>
+                    <div class="col-sm-6">
+                         <h3>Wishlist</h3>
+                <h4 class="ms-5">6</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
+    </div>
+
+
+</div>
+
+
+{% endblock %}

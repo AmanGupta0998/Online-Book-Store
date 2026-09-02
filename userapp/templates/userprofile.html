@@ -1,0 +1,40 @@
+{% extends 'userbase.html' %}
+{% block user %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-rounded border-success my-greetings mb-5" style="background-color: #27ae5f60;border-radius:8px;">User Profile :</h3>
+
+    </div>
+    <div class="col-sm-4 mx-auto">
+
+        <div class="card shadow rounded-5 p-3" style="background-color: #27ae5f60; border: 1px solid green;">
+            <div class="text-center">
+                {% if user.profile %}
+                <img src="{{user.profile.url}}" class="rounded-circle" alt="" width="150" height="150"/>
+                {% else %}
+                <img src="https://i.pinimg.com/736x/4b/90/5b/4b905b1342b5635310923fd10319c265.jpg" alt="" class="rounded-circle" height="150" height="150"/>
+                {% endif %}
+                <h4>{{user.name}}</h4>
+                <hr>
+
+            </div>
+            <p>
+                <strong>Contact No :</strong> {{user.contactno}} <br>
+                <strong>Email Id :</strong> {{user.email}} <br>
+                <strong>Address :</strong> {{user.address}} <br>
+
+            </p>
+            <hr>
+            <div class="text-center">
+                <a href="{% url 'editprofile' %}" class="btn btn-success rounded-pill">Edit Profile</a>
+            </div>
+
+        </div>  
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

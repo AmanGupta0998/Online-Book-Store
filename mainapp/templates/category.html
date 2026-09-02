@@ -1,0 +1,626 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Category
+{% endblock %}
+{% block main %}
+<!-- Featured book start -->
+<div class="row mt-5">
+    <div class="col-sm-10 mx-auto">
+        <div class="row ">
+            <div class="col-sm-4">
+                <hr>
+            </div>
+            <div class="col-sm-4">
+                <p class="fs-3 px-2 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Featured Book By
+                        category</b></p>
+            </div>
+            <div class="col-sm-4">
+                <hr>
+            </div>
+        </div>
+        <div class="row mt-3 mb-4">
+            <div class="col-sm-5">
+                <hr>
+            </div>
+            <div class="col-sm-2">
+                <p class=" fs-3 px-5 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Sci-Fi</b></p>
+            </div>
+            <div class="col-sm-5">
+                <hr>
+            </div>
+        </div>
+        <span><small>Science Fictional Books</small></span>
+        <div class="row mt-1 featured-book">
+            <div class="col-sm-3">
+                <div class="card my-card1">
+                    <div class="icon-container">
+                      <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                    </div>
+                    <div class="card-img-container pt-3">
+                        <img src="{% static 'img/c1.png' %}" class="card-img-top p-3 shadow card-img-top animated-img"
+                            alt="..." height="400px">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-4">The Era Of Robotics</h5>
+                        <span class="fa-xl text-secondary"><i
+                                class="fa-solid fa-indian-rupee-sign"></i>499.00</span><br>
+                        <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card my-card1">
+                    <div class="icon-container">
+                       <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                    </div>
+                    <div class="card-img-container pt-3">
+                        <img src="{% static 'img/c2.png' %}" class="card-img-top p-3 shadow card-img-top animated-img"
+                            alt="..." height="400px">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-4">The Art City</h5>
+                        <span class="fa-xl text-secondary"><i
+                                class="fa-solid fa-indian-rupee-sign"></i>199.00</span><br>
+                        <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card my-card1">
+                    <div class="icon-container">
+                       <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                    </div>
+                    <div class="card-img-container pt-3">
+                        <img src="{% static 'img/c3.jpg' %}" class="card-img-top p-3 shadow card-img-top animated-img"
+                            alt="..." height="400px">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-4">Ikaigai</h5>
+                        <span class="fa-xl text-secondary"><i
+                                class="fa-solid fa-indian-rupee-sign"></i>399.00</span><br>
+                        <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card my-card1">
+                    <div class="icon-container">
+                        <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                    </div>
+                    <div class="card-img-container pt-3">
+                        <img src="{% static 'img/c4.jpg' %}" class="card-img-top p-3 shadow card-img-top animated-img"
+                            alt="..." height="400px">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-4">Rich Dad Poor Dad</h5>
+                        <span class="fa-xl text-secondary"><i
+                                class="fa-solid fa-indian-rupee-sign"></i>249.00</span><br>
+                        <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured book end -->
+<!-- Comics start -->
+<div class="row mt-5 comic-book">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="row mb-3 ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-3 px-5 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Comic</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <span><small>Science Fictional Books</small></span>
+        <div class="row mt-2" data-aos="zoom-out-up" data-aos-duration="1500">
+           <div class="col-sm-12">
+                    <section class="splide" id="splide1">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for b in comic %}
+                                <li class="splide__slide p-3">
+                                    <div class="card my-card1">
+                                        <div class="icon-container">
+                                            <a class="text-dark" href="#"><i class="fa-solid fa-heart fa-xl"></i></a>
+                                            <a class="text-dark" href="{% url 'book_details' id=b.id %}"><i
+                                                    class="fa-solid fa-eye fa-xl"></i></a>
+
+                                                    
+                                        </div>
+                                        <div class="card-img-container pt-3 ">
+                                            {% if b.cover_image %}
+                                            <img src="{{b.cover_image.url}}"
+                                                class="card-img-top p-3 shadow card-img-top animated-img" alt="..."
+                                                height="400px">
+                                            {% else %}
+                                            <img src="" alt="Cover Image"
+                                                class="card-img-top p-3 shadow card-img-top animated-img"
+                                                height="400px">
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title mb-2">{{b.title}}</h5>
+                                            <div class="p-2">
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                    style="color: #27ae60;"></i>
+                                            </div>
+                                            <span class="fa-xl"><i
+                                                    class="fa-solid fa-indian-rupee-sign"></i>{{b.price}}</span><span
+                                                class="text-secondary"><del><i
+                                                        class="fa-solid fa-indian-rupee-sign"></i>{{b.original_price}}</del></span><br>
+                                            <form action="{% url 'addtocart' id=b.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-success mt-2">Add To Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+        </div>
+
+    </div>
+</div>
+<!-- Comics end -->
+<!-- autograpy & selfarearness start -->  
+<div class="row mt-5" >
+    <div class="col-sm-10 mx-auto">
+        <div class="row mb-2">
+            <div class="col-sm-5">
+                <hr>
+            </div>
+            <div class="col-sm-2">
+                <p class="fs-3 px-2 me-2 scale-hover" style="outline:1px solid grey;"> <b>Autobiograpy</b></p>
+            </div>
+            <div class="col-sm-5">
+                <hr>
+            </div>
+        </div>
+        <span><small>Self Awareness Books</small></span>
+        <div class="row mt-1 mb-3">
+            <div class="col-sm-5">
+                <hr>
+            </div>
+            <div class="col-sm-2">
+                <p class=" fs-3 px-2 ms-2 scale-hover" style="outline:1px solid grey;"> <b>SelfArearness</b></p>
+            </div>
+            <div class="col-sm-5">
+                <hr>
+            </div>
+        </div>
+        <span><small>Self Awareness Books</small></span>
+        <div class="row mt-2" data-aos="zoom-out-up" data-aos-duration="1500">
+           <div class="col-sm-12">
+                    <section class="splide" id="splide1">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for b in autography %}
+                                <li class="splide__slide p-3">
+                                    <div class="card my-card1">
+                                        <div class="icon-container">
+                                            <a class="text-dark" href="#"><i class="fa-solid fa-heart fa-xl"></i></a>
+                                            <a class="text-dark" href="{% url 'book_details' id=b.id %}"><i
+                                                    class="fa-solid fa-eye fa-xl"></i></a>
+                                        </div>
+                                        <div class="card-img-container pt-3 ">
+                                            {% if b.cover_image %}
+                                            <img src="{{b.cover_image.url}}"
+                                                class="card-img-top p-3 shadow card-img-top animated-img" alt="..."
+                                                height="400px">
+                                            {% else %}
+                                            <img src="" alt="Cover Image"
+                                                class="card-img-top p-3 shadow card-img-top animated-img"
+                                                height="400px">
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title mb-2">{{b.title}}</h5>
+                                            <div class="p-2">
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                    style="color: #27ae60;"></i>
+                                            </div>
+                                            <span class="fa-xl"><i
+                                                    class="fa-solid fa-indian-rupee-sign"></i>{{b.price}}</span><span
+                                                class="text-secondary"><del><i
+                                                        class="fa-solid fa-indian-rupee-sign"></i>{{b.original_price}}</del></span><br>
+                                            <form action="{% url 'addtocart' id=b.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-success mt-2">Add To Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+        </div>
+    </div>
+</div>
+<!-- autograpy & selfarearness end -->
+<!-- horror start -->
+<div class="row mt-2">
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-5">
+            <div class="row mb-3">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-3 px-5 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Horror</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <span class=""><small>Horror story, a story in which the focus is on creating a feeling of
+                fear. Such tales are of
+                ancient origin and form a substantial part of the body of folk literature. They can feature
+                supernatural elements such as ghosts, witches, or vampires, or they can address more realistic
+                psychological fears. In Western literature the literary cultivation of fear and curiosity for
+                its own sake began to emerge in the 18th-century pre-Romantic era with the Gothic novel. The
+                genre was invented by Horace Walpole, whose The Castle of Otranto (1765) may be said to have
+                founded the horror story as a legitimate literary form. Mary Wollstonecraft Shelley introduced
+                pseudoscience into the genre in her famous novel Frankenstein (1818), about the creation of a
+                monster that ultimately destroys its creator.</small></span>
+        <div class="row mt-4"  data-aos="zoom-out-up" data-aos-duration="1500">
+            <div class="col-sm-10 mx-auto">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                                <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/s14.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Something Wicked This Way Comes</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>199.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                               <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/s14.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Something Wicked This Way Comes</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>199.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                                <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/s14.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Something Wicked This Way Comes</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>199.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- horror end -->
+<!-- Drama Start -->
+<div class="row mt-2" >
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-5">
+            <div class="row mb-3 ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-3 px-5 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Drama</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <span class=""><small>Drama, an intricately captivating facet of human expression, skillfully weaves
+                together narratives through powerful performances, invoking a myriad of emotions and profound
+                thoughts. It forms an extraordinary intersection where the art of the written word harmoniously
+                intertwines with the dynamic artistry of physical depiction, breathing life into stories that
+                resonate on both the grand stages and the silver screen. But what is drama, actually? Where does
+                it come from, and what makes a story dramatic? Let’s find out.
+
+            </small></span>
+        <div class="row mt-4" data-aos="zoom-out-up" data-aos-duration="1500">
+            <div class="col-sm-10 mx-auto">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                               <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Waiting For Godot</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>349.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                               <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Waiting For Godot</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>349.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                              <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>Waiting For Godot</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>349.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drama end -->
+<!-- Thriller start -->
+<div class="row mt-2">
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-5">
+            <div class="row mb-3 ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-3 px-5 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Thriller</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <span class=""><small>A thriller is a type of mystery that is action-packed, suspenseful, and full of
+                tension, anxiety, and fear. They are plot-driven stories with plenty of plot twists. Thrillers
+                are dark and engrossing, and very seldom include comedic elements. They are exciting,
+                suspenseful plays or stories, especially mystery stories.
+            </small></span>
+        <div class="row mt-4"  data-aos="zoom-out-up" data-aos-duration="1500">
+            <div class="col-sm-10 mx-auto">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                              <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>First Lie Wins</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>409.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                               <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>First Lie Wins</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>409.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card my-card1">
+                            <div class="icon-container">
+                               <a class="text-dark" href=""><i class="fa-solid fa-heart fa-xl"></i></a>
+                        <a class="text-dark" href=""><i class="fa-solid fa-eye fa-xl"></i></a>
+                            </div>
+                            <div class="card-img-container pt-3">
+                                <img src="{% static 'img/c6.jpg' %}"
+                                    class="card-img-top p-3 shadow card-img-top animated-img" alt="..." height="400px">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-4"><b>First Lie Wins</b></h5>
+                                <span class="fa-xl text-secondary"><i
+                                        class="fa-solid fa-indian-rupee-sign"></i>409.00</span><br>
+                                <a href="#" class="btn btn-success mt-3">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Thriller end -->
+<!-- crime start -->
+<div class="row" >
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-4">
+            <div class="row mb-3 ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class=" fs-3 px-5 scale-hover" style="outline:1px solid grey;"> <b>Crime</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+            <span class=""><small>ABC</small></span>
+             <div class="row mt-4" data-aos="zoom-out-down" data-aos-duration="1500">
+                <div class="col-sm-12">
+                    <section class="splide" id="splide1">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for b in psy %}
+                                <li class="splide__slide p-3">
+                                    <div class="card my-card1">
+                                        <div class="icon-container">
+                                            <a class="text-dark" href="#"><i class="fa-solid fa-heart fa-xl"></i></a>
+                                            <a class="text-dark" href="{% url 'book_details' id=b.id %}"><i
+                                                    class="fa-solid fa-eye fa-xl"></i></a>
+
+                                                    
+                                        </div>
+                                        <div class="card-img-container pt-3 ">
+                                            {% if b.cover_image %}
+                                            <img src="{{b.cover_image.url}}"
+                                                class="card-img-top p-3 shadow card-img-top animated-img" alt="..."
+                                                height="400px">
+                                            {% else %}
+                                            <img src="" alt="Cover Image"
+                                                class="card-img-top p-3 shadow card-img-top animated-img"
+                                                height="400px">
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title mb-2">{{b.title}}</h5>
+                                            <div class="p-2">
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star fa-beat-fade" style="color: #27ae60;"></i>
+                                                <i class="fa-solid fa-star-half-stroke fa-beat-fade"
+                                                    style="color: #27ae60;"></i>
+                                            </div>
+                                            <span class="fa-xl"><i
+                                                    class="fa-solid fa-indian-rupee-sign"></i>{{b.price}}</span><span
+                                                class="text-secondary"><del><i
+                                                        class="fa-solid fa-indian-rupee-sign"></i>{{b.original_price}}</del></span><br>
+                                            <form action="{% url 'addtocart' id=b.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-success mt-2">Add To Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+<!-- crime end -->
+<!-- comedy start -->
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row mt-4">
+            <div class="row mb-3 ">
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+                <div class="col-sm-2">
+                    <p class="fs-3 px-4 ms-2 scale-hover" style="outline:1px solid grey;"> <b>Comedy</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <span class=""><small>Desc</small></span>
+    </div>
+</div>
+<!-- comedy end -->
+{% endblock %}

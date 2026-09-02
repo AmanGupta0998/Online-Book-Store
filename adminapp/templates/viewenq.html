@@ -1,0 +1,38 @@
+{% extends 'adminbase.html' %}
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-rounded border-success my-greetings"
+            style="background-color: #27ae5f60;">View Enquiry :</h3>
+    </div>
+    <table class="table mt-4">
+        <tr class="border border-success" style="background-color: #27ae5f60;">
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact No</th>
+            <th>Messaage</th>
+            <th>Enquiry Date</th>
+            <th>Action</th>
+        </tr>
+        {% for e in enqs %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.contactno}}</td>
+            <td>{{e.message}}</td>
+            <td>{{e.enqdate}}</td>
+            <td>
+                <a href="{% url 'delenq' id=e.id %}" class="btn btn-danger"><i class="ti ti-trash"></i></a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'userbase.html' %}
+{% block user %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="p-3 border border-1 border-rounded border-success my-greetings mb-4" style="background-color: #27ae5f60;border-radius:8px;">User Orders :</h3>
+
+        {% for items in order_items %}
+        <table class="table">
+            <tr style="background-color: #27ae5f60;">
+                <th>Order I'd</th>
+                <th>Book name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            {% for j in items %}
+            <tr>
+                <td>{{j.order_id}}</td>
+                <td>{{j.book.title}}</td>
+                <td>{{j.quantity}}</td>
+                <td>{{j.book.price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

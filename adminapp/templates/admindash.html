@@ -1,0 +1,58 @@
+{% extends 'adminbase.html' %}
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="ms-2">Hello ! </h4>
+        <div id="greeting" class="alert alert-primary mt-3 text-dark my-greetings" role="alert" style="font-size: 1.2rem; background-color:#27ae5f60; border: 2px solid #27ae60;">    
+            </div>  
+        <div class="row mt-4">
+            <div class="col-sm-4 admin-dash-card1">
+                <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                   
+                    <span class="fa-lg p-2 ms-2 "> <a class="text-secondary" href=""><i class="fa-solid fa-book-open fa-2x me-4 "></i> </a>Total Books</span>
+                    <h3 class="text-center mt-2">{{book_count}}</h3>
+                </div>
+            </div>
+            <div class="col-sm-4 admin-dash-card2">
+               <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                 
+                 <span class="fa-lg  p-2 ms-2"><a class="text-secondary" href=""><i class="fa-solid fa-users fa-2x me-4"></i></a>Total Users</span>
+                 <h3 class="text-center mt-2">{{user_count}}</h3>
+               </div>
+            </div>
+            <div class="col-sm-4 admin-dash-card3">
+                <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                    
+                    <span class="fa-lg  p-2 ms-2"><a class="text-secondary" href=""><i class="fa-solid fa-question fa-2x me-4"></i></a> Total Enquiries</span>
+                    <h3 class="text-center mt-2">{{enquiry_count}}</h3>
+                </div>
+            </div>
+            <div class="col-sm-4 admin-dash-card1">
+                <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                  
+                    <span class="fa-lg  p-2 ms-2" ><a class="text-secondary" href=""> <i class="fa-solid fa-box fa-2x me-4"></i></a>Total Order</span>
+                    <h3 class="text-center mt-2">{{order_count}}</h3>
+                </div>
+            </div>
+             <div class="col-sm-4 admin-dash-card2">
+                <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                  
+                    <span class="fa-lg  p-2 ms-2" ><a class="text-secondary" href=""> <i class="fa-solid fa-box fa-2x me-4"></i></a>No of Categories</span>
+                    <h3 class="text-center mt-2">{{category_count}}</h3>
+                </div>
+            </div>
+             <div class="col-sm-4 admin-dash-card3">
+                <div class="card my-icons" style="height: 120px; background-color:#27ae5f60;border: 2px solid #27ae60;">
+                  
+                    <span class="fa-lg  p-2 ms-2" ><a class="text-secondary" href=""> <i class="fa-solid fa-rupee fa-2x me-4"></i></a>Total Revenue</span>
+                    <h3 class="text-center mt-2">{{total_revenue}}</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

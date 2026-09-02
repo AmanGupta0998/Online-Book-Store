@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Book Details
+{% endblock %}
+{% block main %}
+
+<div class="row mt-5">
+    <div class="col-sm-10 mx-auto shadow rounded p-5 mt-4">
+        <div class="row ">
+            <div class="col-sm-4 border-end">
+                {% if book.cover_image %}
+                <img src="{{ book.cover_image.url }}" class="img-fluid ms-5" alt="Book cover image" width="300px">
+                {% else %}
+                <img src="" alt="No cover">
+                {% endif %}
+            </div>
+            <div class="col-sm-8 ps-4">
+                <h3>{{ book.title }}</h3>
+                <p class="fs-5">
+                    <strong>Author :</strong> {{ book.author }} <br>
+                    <strong>Category :</strong> {{ book.category }} <br>
+                    <strong>Language :</strong> {{ book.laguage }} <br>
+                    <strong>Published Date:</strong> {{ book.published_date }} <br>
+                    <strong>Description</strong> {{ book.description }}
+
+                </p>
+                <h5 class="text-danger">
+                    &#8377;<del>{{book.original_price}}</del></h5>
+                <h5 class="fw-normal">Get it now at : 
+                    <span class="fw-bold text-success">&#8377;{{book.price}}</span></h5>
+
+                    <form method="post" action="{% url 'addtocart' id=book.id %}">
+                        {% csrf_token %}
+                        Qty : 
+                        <input type="number" name="quantity" value="1" min="1" style="width: 60px;">
+                        <button type="submit" class="btn btn-success">Add To Cart</button>
+                    </form>
+                    
+                    <a href="{% url 'checkout' %}" class="btn btn-success">Buy now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

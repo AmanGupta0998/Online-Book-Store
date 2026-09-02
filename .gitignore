@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# ML / Data files
+*.pkl
+*.h5
+*.model
+*.csv
+*.zip
+*.pdf
+*.docx
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/
+
+# Git
+.git/

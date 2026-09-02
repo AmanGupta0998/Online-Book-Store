@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="{% static 'js/script.js' %}" defer></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header start -->
+        <div class="row " style="position: relative; z-index: 1000;">
+            <div class="col-sm-11 mx-auto">
+                <div class="row ">
+                    <div class="col-sm-4 my-header">
+                        <a href="{% url 'index' %}"><img class="m-1" src="{% static 'img/my-logo1.png' %}" alt=""
+                                height="70px" width="150px"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <form class="d-flex my-header mt-4" role="search">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-end head-icons my-header ">
+                        <a class="mt-4" style="color:#212529" href="#"><i class="fa-solid fa-heart fa-xl me-4"></i></a>
+                        <a class="mt-4" style="color:#212529" href="#"><i
+                                class="fa-solid fa-cart-shopping fa-xl me-4"></i></a>
+
+                        {% if userid %}
+                        <div class="dropdown" style="z-index: 999999;">
+                            <button class="btn dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color:#212529">
+                                <b>{{userid}}</b>
+                            </button>
+                            <ul class="dropdown-menu" style="z-index: 1000000;">
+                                <li><a class="dropdown-item" href="{% url 'userdash' %}">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{% url 'viewcart' %}">Cart</a></li>
+                                <li><a class="dropdown-item" href="{% url 'userlogout' %}">Logout</a></li>
+                            </ul>
+                        </div>
+                        {% else %}
+                        <a class="mt-4" style="color:#212529" href="{% url 'login' %}"><i
+                                class="fa-solid fa-user fa-xl me-5"></i></a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header end -->
+        <!-- nav start -->
+        <div class="row sticky-top" style="z-index: 10;">
+            <div class="col-sm-12" style="background-color: #27ae60; ">
+                <nav class="navbar navbar-expand-lg navbar-nav">
+                    <div class="container-fluid">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light nav-link " aria-current="page"
+                                        href="{% url 'index' %}"><b>Home</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light nav-link "
+                                        href="{% url 'category' %}"><b>Category</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light nav-link  " href="{% url 'about' %}"><b>About</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light nav-link "
+                                        href="{% url 'contact' %}"><b>Contact</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light nav-link "
+                                        href="{% url 'register' %}"><b>Register</b></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- nav end -->
+        {% block main %}
+
+        {% endblock %}
+
+        <!-- footer start -->
+        <div class="row mt-5">
+            <div class="col-sm-10 mx-auto">
+                <div class="row mt-4">
+                    <div class="col-sm-3 my-footer">
+                        <h4 class="footer-headings pb-1">Our Location</h4>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-location-dot me-1" style="color: #27ae60;"></i><span>India</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-location-dot me-1" style="color: #27ae60;"></i><span>USA</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-location-dot me-1"
+                                style="color: #27ae60;"></i><span>Russia</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-location-dot me-1"
+                                style="color: #27ae60;"></i><span>France</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-location-dot me-1" style="color: #27ae60;"></i><span>Japan</span></a>
+                    </div>
+                    <div class="col-sm-3 my-footer">
+                        <h4 class="footer-headings pb-1">Quick Links</h4>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'index' %}"><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Home</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'category' %}"><i
+                                class="fa-solid fa-arrow-right me-1"
+                                style="color: #27ae60;"></i><span>category</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'about' %}"><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>About</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'contact' %}"><i
+                                class="fa-solid fa-arrow-right me-1"
+                                style="color: #27ae60;"></i><span>Contact</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'register' %}"><i
+                                class="fa-solid fa-arrow-right me-1"
+                                style="color: #27ae60;"></i><span>Register</span></a>
+                    </div>
+                    <div class="col-sm-3 my-footer">
+                        <h4 class="footer-headings pb-1">Extra Links</h4>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="{% url 'adminlogin' %}"><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Account
+                                Info</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Ordered
+                                Items</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Privacy
+                                Policy</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href="https://docs.stripe.com/payments/payment-methods/overview"><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Payment
+                                Methods</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-arrow-right me-1" style="color: #27ae60;"></i><span>Our
+                                Services</span></a>
+                    </div>
+                    <div class="col-sm-3 my-footer">
+                        <h4 class="footer-headings pb-1">Contact Info</h4>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-phone me-1" style="color: #27ae60;"></i><span>+91
+                                7318509241</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-phone me-1" style="color: #27ae60;"></i><span>+91
+                                7318509241</span></a>
+                        <a class="d-block text-decoration-none text-secondary my-3" href=""><i
+                                class="fa-solid fa-envelope me-1"
+                                style="color: #27ae60;"></i><span>vidyaprakashnmandir@gmail.com</span></a>
+                        <div class="row my-map">
+                            <div>
+                                <img src="{% static 'img/map.png' %}" class="card-img-top" alt="..." height="150px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center ">
+                    <a href=""><i class="fa-brands fa-square-facebook fa-beat fa-2x" style="color: #27ae60;"></i></a>
+                    <a href=""><i class="fa-brands fa-square-x-twitter fa-beat fa-2x" style="color: #27ae60;"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram fa-beat fa-2x" style="color: #27ae60;"></i></a>
+                    <a href=""><i class="fa-brands fa-square-linkedin fa-beat fa-2x" style="color: #27ae60;"></i></a>
+                </div>
+                <hr>
+                <h5 class="text-secondary text-center">Created By <a class="text-decoration-none"
+                        href="{% url 'aboutdev' %}" style="color:#27ae60">Aman Gupta</a> | All
+                    Rights Reserved!</h5>
+            </div>
+        </div>
+        <!-- footer end -->
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/splide.min.js' %}"></script>
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'loop',
+            perPage: 4,
+            perMove: 1,
+            autoplay: true,
+            breakpoints: {
+                1200: { perPage: 4 },
+                640: { perPage: 2 },
+                400: { perPage: 1 },
+            },
+        });
+
+        splide.mount();
+        var splide = new Splide('#splide1', {
+            type: 'loop',
+            perPage: 4,
+            perMove: 1,
+            autoplay: true,
+            breakpoints: {
+                1200: { perPage: 4 },
+                640: { perPage: 2 },
+                400: { perPage: 1 },
+            },
+        });
+
+        splide.mount();
+        var splide = new Splide('#splide2', {
+            type: 'loop',
+            perPage: 3,
+            perMove: 1,
+            autoplay: true,
+            breakpoints: {
+                1200: { perPage: 4 },
+                640: { perPage: 2 },
+                400: { perPage: 1 },
+            },
+        });
+
+        splide.mount();
+    </script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+</body>
+
+</html>
